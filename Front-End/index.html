@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      document.querySelectorAll('input').forEach(input => {
+              input.addEventListener('input', function () {
+                  const maxLength = parseInt(this.getAttribute('maxlength'));
+                  const currentLength = this.value.length;
+      
+                  if (currentLength >= maxLength) {
+                      const nextInput = this.nextElementSibling;
+                      if (nextInput) {
+                          nextInput.focus();
+                      }
+                  }
+              });
+      });
+          </script>
+  </body>
+</html>
